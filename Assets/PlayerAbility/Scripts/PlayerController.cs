@@ -7,9 +7,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
+    [Header("Player Behaviour")]
     public PlayerMovementBehaviour playerMovementBehaviour;
-    public Vector3 rawMovementInput;
-    public Vector3 smoothMovementInput;
+    public PlayerAnimationBehaviour playerAnimationBehaviour;
+
+    private Vector3 rawMovementInput;
+    private Vector3 smoothMovementInput;
 
     public float smoothingMovementSpeed = 1f;
     
@@ -29,10 +32,16 @@ public class PlayerController : MonoBehaviour
         playerMovementBehaviour.UpdateMovementData(smoothMovementInput);
     }
 
+    private void UpdatePlayerMovementAnimation()
+    {
+        playerAnimationBehaviour.PlayMovementAnimation(smoothMovementInput.magnitude);
+    }
+
     // Update is called once per frame
     void Update()
     {
         SmoothingMovementInput();
         UpdateMovement();
+        UpdatePlayerMovementAnimation();
     }
 }
