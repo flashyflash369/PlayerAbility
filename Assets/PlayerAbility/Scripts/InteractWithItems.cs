@@ -11,7 +11,8 @@ public class InteractWithItems : MonoBehaviour
 
     //UI to show when Player in Range to pickup a Collectable
     [SerializeField] public GameObject PickupUI;
-    public TextMeshProUGUI newItemObtainedUI;
+    public TextMeshProUGUI itemNameUI;
+    public TextMeshProUGUI itemDescrptionUI;
     Item item;
 
 
@@ -67,7 +68,8 @@ public class InteractWithItems : MonoBehaviour
     {
         //Get item and display UI
         item = collectable.GetComponent<Item>();
-        newItemObtainedUI.text = $"You have obtained [{item.itemInfos.itemName}]";
-        newItemObtainedUI.transform.parent.gameObject.SetActive(true);
+        itemNameUI.text = $"{item.itemInfos.itemName}";
+        itemDescrptionUI.text = $"{item.itemInfos.itemDescription}"; 
+        itemDescrptionUI.transform.parent.gameObject.SetActive(true);
     }
 }

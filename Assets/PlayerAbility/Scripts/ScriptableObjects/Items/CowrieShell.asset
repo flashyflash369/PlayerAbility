@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5d1561089de2048b1c20a55310b55c, type: 3}
-  m_Name: Coris Necklace
+  m_Name: CowrieShell
   m_EditorClassIdentifier: 
-  itemName: Coris Necklace
-  itemDescription: This
+  itemName: ANCIENT COWRIE
+  itemDescription: An old relic of ancient times. Can be sell at a store or used
+    in healing potions
   itemImage: {fileID: 0}
